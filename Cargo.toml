@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+
+members = [
+  "projects/01_hello_microbit",
+  "projects/02_led_microbit",
+  "projects/03_led_microbit_improved",
+  "projects/04_debug_led_microbit",
+  "projects/05_button_press_microbit",
+  "projects/06_microbit_send_string",
+  "projects/07_microbit_echo_server",
+  "projects/08_microbit_reverse_string",
+  "projects/09_snake_microbit",
+  "projects/10_alloc_microbit",
+]

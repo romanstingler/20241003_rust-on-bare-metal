@@ -1,0 +1,17 @@
+[package]
+name = "alloc_microbit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# critical-section-single-core - this feature enables the use of the critical section API,
+# which is required by the `embedded-alloc` crate. A critical section is a region of code
+# that is protected from interrupts and other concurrent code execution.
+cortex-m = { version = "0.7.3", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7.0"
+panic-halt = "0.2.0"
+rtt-target = { version = "0.3.1", features = ["cortex-m"] }
+panic-rtt-target = { version = "0.1.2", features = ["cortex-m"] }
+microbit-v2 = "0.13.0"
+embedded-alloc = "0.6.0"
+
