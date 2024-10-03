@@ -8,7 +8,7 @@ mod game;
 use cortex_m_rt::entry;
 use microbit::{
     display::nonblocking::{BitImage, GreyscaleImage},
-    hal::{prelude::*, Rng, Timer},
+    hal::{Rng, Timer},
     Board,
 };
 use panic_rtt_target as _;
@@ -17,12 +17,14 @@ use rtt_target::rtt_init_print;
 use crate::control::{get_turn, init_buttons};
 use crate::display::{clear_display, display_image, init_display};
 use crate::game::{Game, GameStatus};
+use embedded_hal::delay::DelayNs;
 
 #[entry]
 fn main() -> ! {
     rtt_init_print!();
     let board = Board::take().unwrap();
-    let mut timer = Timer::new(board.TIMER0).into_periodic();
+    let mut timer = Timer::new(board.TIMER0);
+
     let mut rng = Rng::new(board.RNG);
     let mut game = Game::new(rng.random_u32());
 
