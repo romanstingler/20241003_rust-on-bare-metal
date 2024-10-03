@@ -4,7 +4,7 @@
 
 use cortex_m_rt::entry;
 use microbit::{board::Board, display::blocking::Display, hal::Timer};
-use panic_rtt_target as _;
+use panic_halt as _;
 use rtt_target::{rprintln, rtt_init_print};
 
 const PIXELS: [(usize, usize); 16] = [

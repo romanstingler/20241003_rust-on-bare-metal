@@ -7,7 +7,6 @@ use microbit as _;
 use panic_rtt_target as _;
 use rtt_target::{rprintln, rtt_init_print};
 
-
 #[entry]
 fn main() -> ! {
     // RTT (Real-Time Transfer) initialization
